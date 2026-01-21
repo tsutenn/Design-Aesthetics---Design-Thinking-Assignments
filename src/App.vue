@@ -233,10 +233,13 @@ const currentAssignmentData = computed(() => galleryData.value[currentAssignment
 import { ref, computed } from 'vue'
 
 // 1. Directory Scanning Logic
-const modules = import.meta.glob('@/assets/assignments/**/*.{jpg,jpeg,png,webp}', {
-  eager: true,
-  import: 'default',
-})
+const modules = import.meta.glob(
+  '@/assets/assignments/**/*.{jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP,gif,GIF}',
+  {
+    eager: true,
+    import: 'default',
+  },
+)
 
 const galleryData = computed(() => {
   const data = {}
